@@ -1,0 +1,15 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+{%  include 'accounts/status.html' %}
+<form method="POST" action="{% url 'send_email' %}">
+    {% csrf_token %}
+    <input type="email" name="email" id="">
+    <input type="text" name='message'>
+
+    <button type="submit">send</button>
+</form>
+
+
+{% endblock content %}
